@@ -1,0 +1,10 @@
+database: 
+  dbname: test_db
+  host: test.local
+  password: XXXXX
+  port: 1234
+  username: test_user
+restgateway: 
+  grpcport: 9090
+  host: "127.0.0.1"
+  port: 8080

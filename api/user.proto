@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package usecase;
+
+service UserService {
+  rpc CreateUser(UserCreateRequest) returns (UserCreateResponse) {}
+}
+
+message UserCreateRequest{
+  int64 id = 1;
+  string name = 2;
+  string email_id = 3;
+  string password = 4;
+  string created_at = 5;
+  string updated_at = 6;
+  string token = 7;
+}
+
+message UserCreateResponse{
+  bool UserCreated = 1;
+}
