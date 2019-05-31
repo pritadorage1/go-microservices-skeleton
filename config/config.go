@@ -19,9 +19,9 @@ type DBConfig struct {
 
 //GatewayConfig is for grpc
 type GatewayConfig struct {
-	Grpcport string
+	Grpcport int
 	Host     string
-	Port     string
+	Port     int
 }
 
 //Config Combile
@@ -32,9 +32,10 @@ type Config struct {
 
 //Load data base config
 func Load() {
-	configPath := flag.String("config", "./config.yaml", "path to the configuration file")
-	flag.Parse()
-	viper.SetConfigFile(*configPath)
+	//configPath := flag.String("config", "./config.yaml", "path to the configuration file")
+	//flag.Parse()
+	//viper.SetConfigFile(*configPath)
+	viper.SetConfigFile("./config.yaml")
 	// Searches for config file in given paths and read it
 	if err := viper.ReadInConfig(); err != nil {
 		log.Panic("Error reading config file: ", err)
