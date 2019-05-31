@@ -25,7 +25,7 @@ func StartRESTGateway(ctx context.Context, conf config.GatewayConfig) error {
 	mux := runtime.NewServeMux()
 	opts := []grpc.DialOption{grpc.WithInsecure()}
 
-	address := fmt.Sprintf("%s:%s", conf.Host, conf.Grpcport)
+	address := fmt.Sprintf("%s:%d", conf.Host, conf.Grpcport)
 	endpoint := flag.String("endpoint", address, "usecase address")
 
 	err := gw.RegisterMemberServiceHandlerFromEndpoint(ctx, mux, *endpoint, opts)
